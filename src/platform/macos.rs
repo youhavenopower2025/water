@@ -253,7 +253,7 @@ fn update_daemon_agent(agent_plist_file: String, update_source_dir: String, sync
 
     let func = move || {
         let mut binding = std::process::Command::new("osascript");
-        let mut cmd = binding
+        let cmd = binding
             .arg("-e")
             .arg(update_script_body)
             .arg(daemon_plist_body)
@@ -871,6 +871,7 @@ pub fn hide_dock() {
 }
 
 #[inline]
+#[allow(dead_code)]
 fn get_server_start_time_of(p: &Process, path: &Path) -> Option<i64> {
     let cmd = p.cmd();
     if cmd.len() <= 1 {
@@ -889,6 +890,7 @@ fn get_server_start_time_of(p: &Process, path: &Path) -> Option<i64> {
 }
 
 #[inline]
+#[allow(dead_code)]
 fn get_server_start_time(sys: &mut System, path: &Path) -> Option<(i64, Pid)> {
     sys.refresh_processes_specifics(ProcessRefreshKind::new());
     for (_, p) in sys.processes() {
