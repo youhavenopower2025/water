@@ -99,8 +99,10 @@ class _RemotePageState extends State<RemotePage> with WidgetsBindingObserver {
     );
     WidgetsBinding.instance.addPostFrameCallback((_) {
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+      //pc的链接中么
+      /*
       gFFI.dialogManager
-          .showLoading(translate('Connecting...'), onCancel: closeConnection);
+          .showLoading(translate('Connecting...'), onCancel: closeConnection);*/
     });
     if (!isWeb) {
       WakelockPlus.enable();
